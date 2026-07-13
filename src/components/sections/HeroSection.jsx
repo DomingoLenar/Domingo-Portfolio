@@ -49,7 +49,7 @@ export const HeroSection = () => {
                                 <a href="#projects" className="cosmic-button">
                                     View My Work
                                 </a>
-                                <a href="/Domingo_Lenar_CV.pdf" download className="cosmic-button flex items-center gap-2" style={{background: 'transparent', border: '1px solid hsl(var(--border))'}}>
+                                <a href={`${import.meta.env.BASE_URL}Domingo_Lenar_CV.pdf`} download className="cosmic-button flex items-center gap-2" style={{background: 'transparent', border: '1px solid hsl(var(--border))'}}>
                                     <Download size={18} /> Download CV
                                 </a>
                             </div>
@@ -95,7 +95,7 @@ export const HeroSection = () => {
 
                         <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full p-1 bg-gradient-to-tr from-[#0000ff] via-[#8a2be2] to-[#ff0033] shadow-[0_0_40px_rgba(138,43,226,0.4)]">
                             <img 
-                                src="/Profile.jpg" 
+                                src={`${import.meta.env.BASE_URL}Profile.jpg`} 
                                 alt="Lenar Domingo" 
                                 className="w-full h-full object-cover rounded-full border-[6px] border-background"
                             />

@@ -30,7 +30,7 @@ export const AboutSection = () => {
                             </a>
 
                             <a
-                                href="/Domingo_Lenar_CV.pdf"
+                                href={`${import.meta.env.BASE_URL}Domingo_Lenar_CV.pdf`}
                                 target="_blank"
                                 rel="noreferrer"
                                 className="px-6 py-2 rounded-full border border-[#8a2be2] text-foreground hover:bg-[#8a2be2]/20 transition-colors duration-300"
