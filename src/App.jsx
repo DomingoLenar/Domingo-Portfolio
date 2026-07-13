@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/Domingo-Portfolio">
         <Routes>
           <Route index element={<Home />}/>
           <Route path="*" element={<NotFound />}/>
