@@ -107,6 +107,19 @@
   text-shadow: 0 0 15px rgba(138, 43, 226, 0.6);
 }
 
+@keyframes text-shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@utility text-gradient-xaise {
+  @apply text-transparent bg-clip-text;
+  background-image: linear-gradient(to right, #0000ff, #8a2be2, #ff0033, #8a2be2, #0000ff);
+  background-size: 200% auto;
+  animation: text-shine 4s linear infinite;
+}
+
 @utility card-hover {
   @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg;
 }
