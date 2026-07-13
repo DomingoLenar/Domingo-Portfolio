@@ -1,4 +1,3 @@
-
 import { StarBackground } from "../components/reusable/StarBackground";
 import { NavBar } from "../components/reusable/NavBar";
 import { HeroSection } from "../components/sections/HeroSection";
@@ -7,6 +6,7 @@ import { SkillsSection } from "../components/sections/SkillsSection";
 import { ProjectsSection } from "../components/sections/ProjectsSection";
 import { ContactSection } from "../components/sections/ContactSection";
 import { TimelineSection } from "../components/sections/TimelineSection";
+import { CertificationsSection } from "../components/sections/CertificationsSection";
 import { GithubSection } from "../components/sections/GithubSection";
 import { Footer } from "../components/reusable/Footer";
 export const Home = () => {
@@ -21,6 +21,7 @@ export const Home = () => {
         <AboutSection />
         <SkillsSection />
         <TimelineSection />
+        <CertificationsSection />
         <ProjectsSection />
         <GithubSection />
         <ContactSection />

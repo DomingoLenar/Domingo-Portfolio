@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { 
-    FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython, FaJava, FaNodeJs, FaDocker, FaGithub, FaFigma, FaCode, FaPaintBrush, FaPalette, FaAndroid, FaBrain, FaRobot, FaFire, FaComments, FaStar 
+    FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython, FaJava, FaNodeJs, FaDocker, FaGithub, FaFigma, FaCode, FaPaintBrush, FaPalette, FaAndroid, FaBrain, FaRobot, FaFire, FaComments, FaStar, FaVideo, FaFilm
 } from "react-icons/fa";
 import { 
     SiTypescript, SiLua, SiMysql, SiMariadb, SiSupabase
@@ -20,7 +20,6 @@ const skills = [
     { name: "Java", category: "Backend", icon: <FaJava className="text-[#ED8B00]" /> },
     { name: "Node.js", category: "Backend", icon: <FaNodeJs className="text-[#339933]" /> },
     { name: "Lua", category: "Backend", icon: <SiLua className="text-[#2C2D72]" /> },
-    { name: "Prolog", category: "Backend", icon: <FaCode className="text-gray-400" /> },
 
     // Databases
     { name: "MySQL", category: "Database", icon: <SiMysql className="text-[#4479A1]" /> },
@@ -43,7 +42,9 @@ const skills = [
     // Design
     { name: "Figma", category: "Design", icon: <FaFigma className="text-[#F24E1E]" /> },
     { name: "Canva", category: "Design", icon: <FaPalette className="text-[#00C4CC]" /> },
-    { name: "Adobe Photoshop", category: "Design", icon: <FaPaintBrush className="text-[#31A8FF]" /> }
+    { name: "Photoshop", category: "Design", icon: <FaPaintBrush className="text-[#31A8FF]" /> },
+    { name: "Premiere Pro", category: "Design", icon: <FaVideo className="text-[#9999FF]" /> },
+    { name: "After Effects", category: "Design", icon: <FaFilm className="text-[#9999FF]" /> }
 ];
 
 const categories = ["Frontend", "Backend", "Database", "AI & ML", "Tools", "Design"];
