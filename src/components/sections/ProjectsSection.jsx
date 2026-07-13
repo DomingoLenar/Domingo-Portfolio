@@ -32,8 +32,8 @@ export const ProjectsSection = () => {
     return (
         <section id="projects" className="py-24 px-4 relative">
             <div className="container mx-auto max-w-6xl">
-                <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-                    Featured <span className="text-primary">Projects</span>
+                <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+                    Featured <span className="text-gradient-xaise pb-1">Projects</span>
                 </h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
