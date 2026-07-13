@@ -44,27 +44,27 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 222 47% 11%;
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 100%;
+    --card: 0 0% 7%;
 
-    --primary: 250 47% 60%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 275 90% 60%;
+    --primary-foreground: 0 0% 100%;
 
-    --border: 214 32% 91%;
+    --border: 0 0% 14%;
   }
 
   .dark {
-    --background: 222 47% 4%;
-    --foreground: 213 31% 91%;
+    --background: 0 0% 0%;
+    --foreground: 0 0% 98%;
 
-    --card: 222 47% 8%;
+    --card: 0 0% 3%;
 
-    --primary: 250 65% 65%;
-    --primary-foreground: 213 31% 91%;
+    --primary: 275 100% 60%;
+    --primary-foreground: 0 0% 100%;
 
-    --border: 217 33% 20%;
+    --border: 0 0% 10%;
   }
 
   * {
@@ -104,7 +104,7 @@
 
 @utility text-glow {
   @apply relative;
-  text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
+  text-shadow: 0 0 15px rgba(138, 43, 226, 0.6);
 }
 
 @utility card-hover {
@@ -113,15 +113,17 @@
 
 @utility gradient-border {
   @apply relative rounded-md;
-  background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card)));
-  background-clip: padding-box;
+  background: linear-gradient(to right, hsl(var(--card)), hsl(var(--card))), linear-gradient(to bottom left, #0000ff, #8a2be2, #ff0033);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
   border: 1px solid transparent;
 }
 
 @utility cosmic-button {
-  @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium
-    transition-all duration-300 hover:shadow-[0_0_10px_rgba(139,92,246,0.5)]
+  @apply px-6 py-2 rounded-full text-white font-medium
+    transition-all duration-300 hover:shadow-[0_0_15px_rgba(138,43,226,0.6)]
     hover:scale-105 active:scale-95;
+  background: linear-gradient(to bottom left, #0000ff, #8a2be2, #ff0033);
 }
 
 @utility star {
