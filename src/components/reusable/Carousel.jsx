@@ -38,7 +38,7 @@ export const Carousel = ({ items, renderItem }) => {
 
     return (
         <div 
-            className="relative group w-full" 
+            className="relative group w-full border-y border-[#8a2be2]/30 bg-secondary/20 shadow-[inset_0_0_20px_rgba(0,0,0,0.3)]" 
             onMouseEnter={() => setIsHovered(true)} 
             onMouseLeave={() => setIsHovered(false)}
         >
