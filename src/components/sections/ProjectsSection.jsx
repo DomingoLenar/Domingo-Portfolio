@@ -65,10 +65,10 @@ const otherProjects = [
 
 export const ProjectsSection = () => {
     const renderOtherProject = (project) => (
-        <div className="w-[280px] bg-secondary/30 border border-border p-5 rounded-xl flex flex-col transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 cursor-pointer h-full">
+        <div className="w-[280px] bg-secondary/30 border border-border p-5 rounded-xl flex flex-col transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 cursor-pointer h-full" onClick={() => window.open(project.github, '_blank')}>
             <div className="flex justify-between items-start mb-3">
                 <h4 className="text-lg font-bold truncate pr-2" title={project.title}>{project.title}</h4>
-                <a href={project.github} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-white shrink-0">
+                <a href={project.github} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-white shrink-0" onClick={(e) => e.stopPropagation()}>
                     <Github size={18} />
                 </a>
             </div>
@@ -95,16 +95,16 @@ export const ProjectsSection = () => {
                 {/* Featured Projects Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
                     {featuredProjects.map((project, index) => (
-                        <div key={index} className="bg-card rounded-2xl overflow-hidden shadow-lg border border-border flex flex-col card-hover">
+                        <div key={index} className="bg-card rounded-2xl overflow-hidden shadow-lg border border-border flex flex-col card-hover cursor-pointer" onClick={() => window.open(project.github, '_blank')}>
                             <div className="p-6 flex flex-col h-full">
                                 <div className="flex justify-between items-start mb-4">
                                     <h3 className="text-xl font-bold">{project.title}</h3>
                                     <div className="flex gap-3">
-                                        <a href={project.github} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-white transition-colors hover:scale-110 duration-300">
+                                        <a href={project.github} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-white transition-colors hover:scale-110 duration-300" onClick={(e) => e.stopPropagation()}>
                                             <Github size={20} />
                                         </a>
                                         {project.demo !== "#" && (
-                                            <a href={project.demo} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors hover:scale-110 duration-300">
+                                            <a href={project.demo} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors hover:scale-110 duration-300" onClick={(e) => e.stopPropagation()}>
                                                 <ExternalLink size={20} />
                                             </a>
                                         )}

@@ -19,10 +19,10 @@ export const Home = () => {
       <main>
         <HeroSection />
         <AboutSection />
-        <SkillsSection />
         <TimelineSection />
-        <CertificationsSection />
         <ProjectsSection />
+        <CertificationsSection />
+        <SkillsSection />
         <GithubSection />
         <ContactSection />
       </main>

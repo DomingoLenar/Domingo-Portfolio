@@ -1,7 +1,7 @@
 import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
 import { TypeAnimation } from 'react-type-animation';
-import { FaReact, FaNodeJs } from "react-icons/fa";
-import { SiTypescript } from "react-icons/si";
+import { FaReact, FaNodeJs, FaHtml5 } from "react-icons/fa";
+import { SiTypescript, SiTailwindcss, SiJavascript } from "react-icons/si";
 
 export const HeroSection = () => {
     return (
@@ -90,6 +90,25 @@ export const HeroSection = () => {
                         <div className="absolute -bottom-4 right-10 md:-bottom-2 md:right-20 z-20 animate-bounce" style={{ animationDuration: '3.5s' }}>
                             <div className="bg-background/80 backdrop-blur-md p-3 rounded-full border border-white/10 shadow-[0_0_20px_rgba(51,153,51,0.3)] text-[#339933]">
                                 <FaNodeJs size={30} />
+                            </div>
+                        </div>
+
+                        {/* New bubbles */}
+                        <div className="absolute top-12 -left-4 md:top-16 md:-left-8 z-20 animate-bounce" style={{ animationDuration: '4s' }}>
+                            <div className="bg-background/80 backdrop-blur-md p-3 rounded-full border border-white/10 shadow-[0_0_20px_rgba(56,189,248,0.3)] text-[#38bdf8]">
+                                <SiTailwindcss size={26} />
+                            </div>
+                        </div>
+
+                        <div className="absolute top-1/2 -right-6 md:top-1/2 md:-right-10 -translate-y-1/2 z-20 animate-bounce" style={{ animationDuration: '5s' }}>
+                            <div className="bg-background/80 backdrop-blur-md p-3 rounded-full border border-white/10 shadow-[0_0_20px_rgba(227,79,38,0.3)] text-[#E34F26]">
+                                <FaHtml5 size={28} />
+                            </div>
+                        </div>
+
+                        <div className="absolute -top-6 left-1/4 md:-top-10 md:left-1/4 z-20 animate-bounce" style={{ animationDuration: '3.8s' }}>
+                            <div className="bg-background/80 backdrop-blur-md p-3 rounded-full border border-white/10 shadow-[0_0_20px_rgba(247,223,30,0.3)] text-[#F7DF1E]">
+                                <SiJavascript size={28} />
                             </div>
                         </div>
 
