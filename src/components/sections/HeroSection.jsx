@@ -49,8 +49,8 @@ export const HeroSection = () => {
                                 <a href="#projects" className="cosmic-button">
                                     View My Work
                                 </a>
-                                <a href={`${import.meta.env.BASE_URL}Domingo_Lenar_CV.pdf`} download className="cosmic-button flex items-center gap-2" style={{background: 'transparent', border: '1px solid hsl(var(--border))'}}>
-                                    <Download size={18} /> Download CV
+                                <a href={`${import.meta.env.BASE_URL}Domingo_Lenar_Resume.pdf`} download className="cosmic-button flex items-center gap-2" style={{background: 'transparent', border: '1px solid hsl(var(--border))'}}>
+                                    <Download size={18} /> Download Resume
                                 </a>
                             </div>
 
