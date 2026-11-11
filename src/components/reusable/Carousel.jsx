@@ -3,14 +3,16 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export const Carousel = ({ items, renderItem }) => {
     const scrollRef = useRef(null);
-    const [isHovered, setIsHovered] = useState(false);
+    const [isPaused, setIsPaused] = useState(false);
 
     useEffect(() => {
         const container = scrollRef.current;
         if (!container) return;
 
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
         let interval;
-        if (!isHovered) {
+        if (!isPaused && !reduceMotion) {
             interval = setInterval(() => {
                 // If we've scrolled past the first set of items (which is 1/3 of the total scroll width since we duplicated 3 times)
                 // We seamlessly jump back to 0.
@@ -23,7 +25,7 @@ export const Carousel = ({ items, renderItem }) => {
         }
 
         return () => clearInterval(interval);
-    }, [isHovered]);
+    }, [isPaused]);
 
     const scroll = (direction) => {
         const container = scrollRef.current;
@@ -39,8 +41,12 @@ export const Carousel = ({ items, renderItem }) => {
     return (
         <div 
             className="relative group w-full border-y border-[#8a2be2]/30 bg-secondary/20 shadow-[inset_0_0_20px_rgba(0,0,0,0.3)]" 
-            onMouseEnter={() => setIsHovered(true)} 
-            onMouseLeave={() => setIsHovered(false)}
+            onMouseEnter={() => setIsPaused(true)} 
+            onMouseLeave={() => setIsPaused(false)}
+            onFocus={() => setIsPaused(true)}
+            onBlur={(e) => {
+                if (!e.currentTarget.contains(e.relatedTarget)) setIsPaused(false);
+            }}
         >
             <style>{`
                 .hide-scroll::-webkit-scrollbar { display: none; }
@@ -50,13 +56,15 @@ export const Carousel = ({ items, renderItem }) => {
             {/* Arrows */}
             <button 
                 onClick={() => scroll('left')}
-                className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-30 bg-background border border-[#8a2be2]/50 p-2 md:p-3 rounded-full shadow-[0_0_15px_rgba(138,43,226,0.3)] opacity-0 group-hover:opacity-100 transition-all hover:bg-secondary text-white hover:scale-110 cursor-pointer"
+                aria-label="Scroll projects left"
+                className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-30 bg-background border border-[#8a2be2]/50 p-2 md:p-3 rounded-full shadow-[0_0_15px_rgba(138,43,226,0.3)] opacity-0 group-hover:opacity-100 focus-visible:opacity-100 transition-all hover:bg-secondary text-white hover:scale-110 cursor-pointer"
             >
                 <ChevronLeft size={24} />
             </button>
             <button 
                 onClick={() => scroll('right')}
-                className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-30 bg-background border border-[#8a2be2]/50 p-2 md:p-3 rounded-full shadow-[0_0_15px_rgba(138,43,226,0.3)] opacity-0 group-hover:opacity-100 transition-all hover:bg-secondary text-white hover:scale-110 cursor-pointer"
+                aria-label="Scroll projects right"
+                className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-30 bg-background border border-[#8a2be2]/50 p-2 md:p-3 rounded-full shadow-[0_0_15px_rgba(138,43,226,0.3)] opacity-0 group-hover:opacity-100 focus-visible:opacity-100 transition-all hover:bg-secondary text-white hover:scale-110 cursor-pointer"
             >
                 <ChevronRight size={24} />
             </button>
@@ -67,10 +75,16 @@ export const Carousel = ({ items, renderItem }) => {
 
             <div 
                 ref={scrollRef}
-                className="flex overflow-x-auto hide-scroll py-8 w-full scroll-smooth"
+                className="flex overflow-x-auto hide-scroll py-8 w-full"
             >
                 {displayItems.map((item, index) => (
-                    <div key={index} className="flex-none px-3 md:px-4">
+                    <div
+                        key={index}
+                        className="flex-none px-3 md:px-4"
+                        // Copies exist only for the seamless loop; hide them from Tab and screen readers
+                        inert={index >= items.length}
+                        aria-hidden={index >= items.length || undefined}
+                    >
                         {renderItem(item, index)}
                     </div>
                 ))}

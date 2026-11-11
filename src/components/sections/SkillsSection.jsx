@@ -1,4 +1,3 @@
-import { cn } from "@/lib/utils";
 import { 
     FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython, FaJava, FaNodeJs, FaDocker, FaGithub, FaFigma, FaCode, FaPaintBrush, FaPalette, FaAndroid, FaBrain, FaRobot, FaFire, FaComments, FaStar, FaVideo, FaFilm
 } from "react-icons/fa";

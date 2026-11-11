@@ -51,26 +51,33 @@ const otherProjects = [
     },
     { 
         title: "Banorant", 
-        description: "A desktop application project.",
-        tags: ["Java"], 
+        description: "A client-server booking app where fans schedule and pay for sessions with celebrities, built on Java RMI with a MySQL backend.",
+        tags: ["Java", "Java RMI", "MySQL"],
         github: "https://github.com/DomingoLenar/Banorant" 
     },
     { 
         title: "BoguBogu", 
-        description: "A custom Java-based application.",
-        tags: ["Java"], 
+        description: "Implementations and time-complexity analysis of bubble, selection, and insertion sort across best, average, and worst cases.",
+        tags: ["Java", "Algorithms"],
         github: "https://github.com/DomingoLenar/BoguBogu" 
     }
 ];
 
 export const ProjectsSection = () => {
     const renderOtherProject = (project) => (
-        <div className="w-[280px] bg-secondary/30 border border-border p-5 rounded-xl flex flex-col transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 cursor-pointer h-full" onClick={() => window.open(project.github, '_blank')}>
+        <div className="relative w-[280px] bg-secondary/30 border border-border p-5 rounded-xl flex flex-col transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 focus-within:border-primary/50 h-full">
             <div className="flex justify-between items-start mb-3">
-                <h4 className="text-lg font-bold truncate pr-2" title={project.title}>{project.title}</h4>
-                <a href={project.github} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-white shrink-0" onClick={(e) => e.stopPropagation()}>
-                    <Github size={18} />
-                </a>
+                <h4 className="text-lg font-bold truncate pr-2" title={project.title}>
+                    <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="after:absolute after:inset-0 after:rounded-xl focus:outline-none focus-visible:after:ring-2 focus-visible:after:ring-primary"
+                    >
+                        {project.title}
+                    </a>
+                </h4>
+                <Github size={18} className="text-muted-foreground shrink-0" aria-hidden="true" />
             </div>
             <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
                 {project.description}
@@ -95,16 +102,23 @@ export const ProjectsSection = () => {
                 {/* Featured Projects Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
                     {featuredProjects.map((project, index) => (
-                        <div key={index} className="bg-card rounded-2xl overflow-hidden shadow-lg border border-border flex flex-col card-hover cursor-pointer" onClick={() => window.open(project.github, '_blank')}>
+                        <div key={index} className="relative bg-card rounded-2xl overflow-hidden shadow-lg border border-border flex flex-col card-hover focus-within:border-primary/50">
                             <div className="p-6 flex flex-col h-full">
                                 <div className="flex justify-between items-start mb-4">
-                                    <h3 className="text-xl font-bold">{project.title}</h3>
-                                    <div className="flex gap-3">
-                                        <a href={project.github} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-white transition-colors hover:scale-110 duration-300" onClick={(e) => e.stopPropagation()}>
-                                            <Github size={20} />
+                                    <h3 className="text-xl font-bold">
+                                        <a
+                                            href={project.github}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            className="after:absolute after:inset-0 after:rounded-2xl focus:outline-none focus-visible:after:ring-2 focus-visible:after:ring-primary"
+                                        >
+                                            {project.title}
                                         </a>
+                                    </h3>
+                                    <div className="flex gap-3">
+                                        <Github size={20} className="text-muted-foreground" aria-hidden="true" />
                                         {project.demo !== "#" && (
-                                            <a href={project.demo} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary transition-colors hover:scale-110 duration-300" onClick={(e) => e.stopPropagation()}>
+                                            <a href={project.demo} target="_blank" rel="noreferrer" aria-label={`${project.title} live demo`} className="relative z-10 text-muted-foreground hover:text-primary transition-colors hover:scale-110 duration-300">
                                                 <ExternalLink size={20} />
                                             </a>
                                         )}

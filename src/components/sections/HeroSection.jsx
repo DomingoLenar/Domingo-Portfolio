@@ -34,7 +34,7 @@ export const HeroSection = () => {
                                         2500,
                                         'Building responsive, user-centric web and mobile apps.',
                                         2500,
-                                        'B.S. Computer Science student at Saint Louis University.',
+                                        'B.S. Computer Science graduate of Saint Louis University.',
                                         2500
                                     ]}
                                     wrapper="span"
@@ -114,7 +114,7 @@ export const HeroSection = () => {
 
                         <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full p-1 bg-gradient-to-tr from-[#0000ff] via-[#8a2be2] to-[#ff0033] shadow-[0_0_40px_rgba(138,43,226,0.4)]">
                             <img 
-                                src={`${import.meta.env.BASE_URL}Profile.jpg`} 
+                                src={`${import.meta.env.BASE_URL}Profile.webp`} 
                                 alt="Lenar Domingo" 
                                 className="w-full h-full object-cover rounded-full border-[6px] border-background"
                             />

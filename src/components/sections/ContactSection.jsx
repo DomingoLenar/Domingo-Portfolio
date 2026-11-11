@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Mail, MapPin, Phone, Send, CheckCircle2, AlertCircle } from "lucide-react";
+import { Mail, MapPin, Send, CheckCircle2, AlertCircle } from "lucide-react";
 
 export const ContactSection = () => {
     const [formData, setFormData] = useState({
@@ -81,20 +81,11 @@ export const ContactSection = () => {
                             </div>
                             <div className="flex items-center gap-4 w-full">
                                 <div className="p-3 bg-primary/10 rounded-full text-primary shadow-inner shrink-0">
-                                    <Phone size={24} />
-                                </div>
-                                <div className="text-left">
-                                    <h4 className="text-sm font-medium text-muted-foreground mb-1">Phone</h4>
-                                    <p className="text-foreground font-medium">+63 915 764 4966</p>
-                                </div>
-                            </div>
-                            <div className="flex items-center gap-4 w-full">
-                                <div className="p-3 bg-primary/10 rounded-full text-primary shadow-inner shrink-0">
                                     <MapPin size={24} />
                                 </div>
                                 <div className="text-left">
                                     <h4 className="text-sm font-medium text-muted-foreground mb-1">Location</h4>
-                                    <p className="text-foreground font-medium">Manila, Philippines</p>
+                                    <p className="text-foreground font-medium">Baguio City, Philippines</p>
                                 </div>
                             </div>
                         </div>

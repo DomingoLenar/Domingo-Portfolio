@@ -23,7 +23,7 @@ const timelineData = [
         type: "education",
         title: "B.S. in Computer Science",
         organization: "Saint Louis University",
-        date: "Expected July 2026",
+        date: "July 2026",
         location: "Baguio City, PH",
         description: "Awards: Dean's Lister, 2nd Place MPTC Innovation Olympics (2024). Certifications: Lean Six Sigma Yellow Belt, Project Management Fundamentals.",
         icon: <GraduationCap size={20} />
