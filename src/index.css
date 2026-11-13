@@ -46,6 +46,14 @@
     100% { transform: rotate(145deg) translateX(var(--meteor-distance, 600px)); opacity: 0; }
   }
 
+  /* Now-playing equalizer bars */
+  --animate-eq: eq 0.9s ease-in-out infinite;
+
+  @keyframes eq {
+    0%, 100% { transform: scaleY(0.3); }
+    50% { transform: scaleY(1); }
+  }
+
   --animate-marquee: marquee 35s linear infinite;
 
   @keyframes marquee {

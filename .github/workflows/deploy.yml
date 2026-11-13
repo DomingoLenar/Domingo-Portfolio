@@ -40,6 +40,11 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+        env:
+          # Spotify "now playing" via Last.fm. Set these under Settings → Secrets and variables → Actions → Variables.
+          # The Last.fm key is read-only and ends up in the public bundle anyway, so a variable (not a secret) is fine.
+          VITE_LASTFM_USER: ${{ vars.LASTFM_USER }}
+          VITE_LASTFM_API_KEY: ${{ vars.LASTFM_API_KEY }}
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact

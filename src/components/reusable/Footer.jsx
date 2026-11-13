@@ -1,5 +1,7 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 import { openCommandPalette, paletteShortcutLabel } from "@/lib/events";
+import { NowPlaying } from "./NowPlaying";
+import { DiscordStatus } from "./DiscordStatus";
 
 export const Footer = () => {
     return (
@@ -45,6 +47,12 @@ export const Footer = () => {
                 <div className="text-sm text-muted-foreground text-center md:text-right">
                     &copy; {new Date().getFullYear()} Lenar Domingo. <br className="md:hidden" />All rights reserved.
                 </div>
+            </div>
+
+            {/* "Right now": live Spotify + Discord cards (each hides itself if it has nothing to show) */}
+            <div className="container mx-auto px-4 mt-8 flex flex-wrap justify-center gap-3 empty:hidden">
+                <NowPlaying />
+                <DiscordStatus />
             </div>
         </footer>
     );
