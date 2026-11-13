@@ -3,6 +3,16 @@ import { Briefcase, GraduationCap, Calendar } from "lucide-react";
 const timelineData = [
     {
         type: "experience",
+        title: "UI/UX Designer",
+        organization: "Southern California Medical Management Services, Inc. (SCMMS)",
+        date: "October 2026 – Present",
+        location: "Remote",
+        // Product name intentionally not mentioned until it's public
+        description: "Designing a platform for managing adult residential care facilities. Conducting user research to guide design decisions and translating stakeholder requirements into user flows, wireframes, and high-fidelity Figma prototypes.",
+        icon: <Briefcase size={20} />
+    },
+    {
+        type: "experience",
         title: "Software Developer",
         organization: "Ecosystem for Sustainable Commerce in Agriculture (ESCA)",
         date: "January 2026 – Present",
