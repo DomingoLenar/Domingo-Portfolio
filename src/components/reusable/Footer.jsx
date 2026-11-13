@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail } from "lucide-react";
+import { openCommandPalette, paletteShortcutLabel } from "@/lib/events";
 
 export const Footer = () => {
     return (
@@ -15,6 +16,15 @@ export const Footer = () => {
                     <p className="text-muted-foreground text-sm mt-2">
                         Building digital experiences that matter.
                     </p>
+                    <button
+                        type="button"
+                        onClick={openCommandPalette}
+                        className="hidden md:inline-flex items-center gap-2 mt-3 text-xs text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
+                    >
+                        Press
+                        <kbd className="px-1.5 py-0.5 rounded border border-border bg-secondary/50 font-sans">{paletteShortcutLabel()}</kbd>
+                        to jump anywhere
+                    </button>
                 </div>
 
                 <div className="flex items-center gap-6">

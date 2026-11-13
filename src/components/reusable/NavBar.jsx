@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { Menu, X } from "lucide-react";
+import { Menu, X, PenTool } from "lucide-react";
 import { useEffect, useState } from "react";
 
 
@@ -13,7 +13,7 @@ const navItems = [
     { name: 'Contact', href: "#contact" },
 ];
 
-export const NavBar = () => {
+export const NavBar = ({ designMode, onToggleDesignMode }) => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -52,6 +52,25 @@ export const NavBar = () => {
                             {item.name}
                         </a>
                     ))}
+
+                    {/* Design mode toggle (desktop only) */}
+                    <button
+                        type="button"
+                        onClick={onToggleDesignMode}
+                        aria-pressed={designMode}
+                        data-design-toggle
+                        title={designMode ? "Exit design mode (Esc)" : "Design mode: see how this page is built"}
+                        className={cn(
+                            "flex items-center gap-2 px-3 py-1.5 rounded-full border text-sm transition-all duration-300 cursor-pointer",
+                            designMode
+                                ? "border-[#ff0033]/60 bg-[#ff0033]/15 text-foreground"
+                                : "border-border text-foreground/70 hover:text-foreground hover:border-primary/50"
+                        )}
+                    >
+                        <PenTool size={16} />
+                        <span className="hidden lg:inline">Design mode</span>
+                        <span className="sr-only lg:hidden">Design mode</span>
+                    </button>
                 </div>
 
                 {/* Mobile Navigation */}

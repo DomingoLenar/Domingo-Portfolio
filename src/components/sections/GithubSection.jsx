@@ -7,7 +7,7 @@ const purpleTheme = {
 
 export const GithubSection = () => {
     return (
-        <section className="py-16 px-4 relative">
+        <section id="github" className="py-16 px-4 relative">
             <div className="container mx-auto max-w-5xl flex flex-col items-center">
                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
                     GitHub <span className="text-gradient-xaise pb-1">Activity</span>
