@@ -11,6 +11,9 @@
 
   --color-card: hsl(var(--card));
 
+  --color-secondary: hsl(var(--secondary));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
   --animate-float: float 6s ease-in-out infinite;
   --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinite;
   --animate-fade-in: fade-in 0.7s ease-in forwards;
@@ -18,7 +21,7 @@
   --animate-fade-in-delay-2: fade-in 0.7s ease-in 0.4s forwards;
   --animate-fade-in-delay-3: fade-in 0.7s ease-in 0.6s forwards;
   --animate-fade-in-delay-4: fade-in 0.7s ease-in 0.8s forwards;
-  --animate-meteor: meteor 5s ease-in-out infinite;
+  --animate-meteor: meteor 1.2s linear forwards;
 
   @keyframes float {
     0%, 100% { transform: translateY(0); }
@@ -35,10 +38,12 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
+  /* Travels down-left along its own axis; head (right end) leads, tail fades behind */
   @keyframes meteor {
-    0% { transform: rotate(215deg) translateX(0); opacity: 1; }
-    70% { opacity: 1; }
-    100% { transform: rotate(215deg) translateX(-500px); opacity: 0; }
+    0% { transform: rotate(145deg) translateX(0); opacity: 0; }
+    10% { opacity: 1; }
+    60% { opacity: 1; }
+    100% { transform: rotate(145deg) translateX(var(--meteor-distance, 600px)); opacity: 0; }
   }
 
   --animate-marquee: marquee 35s linear infinite;
@@ -60,6 +65,9 @@
 
     --card: 0 0% 7%;
 
+    --secondary: 0 0% 14%;
+    --muted-foreground: 0 0% 64%;
+
     --primary: 275 90% 60%;
     --primary-foreground: 0 0% 100%;
 
@@ -71,6 +79,9 @@
     --foreground: 0 0% 98%;
 
     --card: 0 0% 3%;
+
+    --secondary: 0 0% 10%;
+    --muted-foreground: 0 0% 60%;
 
     --primary: 275 100% 60%;
     --primary-foreground: 0 0% 100%;
@@ -155,9 +166,25 @@
   box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
 }
 
+/* Hairline streak: transparent tail -> bright head (right end) */
 @utility meteor {
-  @apply absolute bg-linear-to-r from-white via-white to-transparent rounded-full;
-  box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
+  @apply absolute rounded-full;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.85));
+}
+
+/* Glow only on the head, not the whole streak */
+.meteor::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 3px;
+  height: 3px;
+  border-radius: 9999px;
+  background: #fff;
+  box-shadow: 0 0 6px 2px rgba(255, 255, 255, 0.6), 0 0 14px 4px rgba(170, 120, 255, 0.35);
+  transform: translate(50%, -50%);
 }
 
 #root {

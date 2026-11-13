@@ -1,12 +1,24 @@
-import { 
-    FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython, FaJava, FaNodeJs, FaDocker, FaGithub, FaFigma, FaCode, FaPaintBrush, FaPalette, FaAndroid, FaBrain, FaRobot, FaFire, FaComments, FaStar, FaVideo, FaFilm
+import {
+    FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython, FaJava, FaNodeJs, FaDocker, FaGithub, FaFigma, FaPaintBrush, FaPalette, FaAndroid, FaBrain, FaFire, FaVideo, FaFilm,
+    FaUsers, FaPencilRuler, FaMousePointer, FaLayerGroup
 } from "react-icons/fa";
-import { 
-    SiTypescript, SiLua, SiMysql, SiMariadb, SiSupabase
+import {
+    SiTypescript, SiMysql, SiMariadb, SiSupabase
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 
 const skills = [
+    // Design
+    { name: "Figma", category: "Design", icon: <FaFigma className="text-[#F24E1E]" /> },
+    { name: "User Research", category: "Design", icon: <FaUsers className="text-[#8a2be2]" /> },
+    { name: "Wireframing", category: "Design", icon: <FaPencilRuler className="text-[#ff0033]" /> },
+    { name: "Prototyping", category: "Design", icon: <FaMousePointer className="text-[#38bdf8]" /> },
+    { name: "Design Systems", category: "Design", icon: <FaLayerGroup className="text-[#3ECF8E]" /> },
+    { name: "Canva", category: "Design", icon: <FaPalette className="text-[#00C4CC]" /> },
+    { name: "Photoshop", category: "Design", icon: <FaPaintBrush className="text-[#31A8FF]" /> },
+    { name: "Premiere Pro", category: "Design", icon: <FaVideo className="text-[#9999FF]" /> },
+    { name: "After Effects", category: "Design", icon: <FaFilm className="text-[#9999FF]" /> },
+
     // Frontend
     { name: "HTML", category: "Frontend", icon: <FaHtml5 className="text-[#E34F26]" /> },
     { name: "CSS", category: "Frontend", icon: <FaCss3Alt className="text-[#1572B6]" /> },
@@ -18,7 +30,6 @@ const skills = [
     { name: "Python", category: "Backend", icon: <FaPython className="text-[#3776AB]" /> },
     { name: "Java", category: "Backend", icon: <FaJava className="text-[#ED8B00]" /> },
     { name: "Node.js", category: "Backend", icon: <FaNodeJs className="text-[#339933]" /> },
-    { name: "Lua", category: "Backend", icon: <SiLua className="text-[#2C2D72]" /> },
 
     // Databases
     { name: "MySQL", category: "Database", icon: <SiMysql className="text-[#4479A1]" /> },
@@ -33,20 +44,10 @@ const skills = [
 
     // AI & ML
     { name: "TensorFlow", category: "AI & ML", icon: <FaBrain className="text-[#FF6F00]" /> },
-    { name: "PyTorch", category: "AI & ML", icon: <FaFire className="text-[#EE4C2C]" /> },
-    { name: "OpenAI", category: "AI & ML", icon: <FaRobot className="text-[#10A37F]" /> },
-    { name: "Claude", category: "AI & ML", icon: <FaComments className="text-[#D97757]" /> },
-    { name: "Gemini", category: "AI & ML", icon: <FaStar className="text-[#8a2be2]" /> },
-
-    // Design
-    { name: "Figma", category: "Design", icon: <FaFigma className="text-[#F24E1E]" /> },
-    { name: "Canva", category: "Design", icon: <FaPalette className="text-[#00C4CC]" /> },
-    { name: "Photoshop", category: "Design", icon: <FaPaintBrush className="text-[#31A8FF]" /> },
-    { name: "Premiere Pro", category: "Design", icon: <FaVideo className="text-[#9999FF]" /> },
-    { name: "After Effects", category: "Design", icon: <FaFilm className="text-[#9999FF]" /> }
+    { name: "PyTorch", category: "AI & ML", icon: <FaFire className="text-[#EE4C2C]" /> }
 ];
 
-const categories = ["Frontend", "Backend", "Database", "AI & ML", "Tools", "Design"];
+const categories = ["Design", "Frontend", "Backend", "Database", "AI & ML", "Tools"];
 
 export const SkillsSection = () => {
     return (

@@ -1,5 +1,4 @@
 import { Github, ExternalLink } from "lucide-react";
-import { Carousel } from "../reusable/Carousel";
 
 // The top 3 main projects for the grid
 const featuredProjects = [
@@ -29,7 +28,7 @@ const featuredProjects = [
     }
 ];
 
-// Additional projects for the infinite marquee
+// Additional projects for the smaller grid below
 const otherProjects = [
     { 
         title: "Cordillera-Language-Mapping", 
@@ -65,7 +64,7 @@ const otherProjects = [
 
 export const ProjectsSection = () => {
     const renderOtherProject = (project) => (
-        <div className="relative w-[280px] bg-secondary/30 border border-border p-5 rounded-xl flex flex-col transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 focus-within:border-primary/50 h-full">
+        <div key={project.title} className="relative bg-secondary/30 border border-border p-5 rounded-xl flex flex-col transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 focus-within:border-primary/50 h-full">
             <div className="flex justify-between items-start mb-3">
                 <h4 className="text-lg font-bold truncate pr-2" title={project.title}>
                     <a
@@ -93,8 +92,8 @@ export const ProjectsSection = () => {
     );
 
     return (
-        <section id="projects" className="py-24 px-4 relative overflow-hidden">
-            <div className="container mx-auto max-w-6xl mb-12">
+        <section id="projects" className="py-24 px-4 relative">
+            <div className="container mx-auto max-w-6xl">
                 <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
                     Featured <span className="text-gradient-xaise pb-1">Projects</span>
                 </h2>
@@ -144,10 +143,12 @@ export const ProjectsSection = () => {
                 <h3 className="text-2xl md:text-3xl font-bold mb-8 text-center text-foreground/80">
                     More <span className="text-primary">Projects</span>
                 </h3>
-            </div>
 
-            {/* Other Projects Carousel */}
-            <Carousel items={otherProjects} renderItem={renderOtherProject} />
+                {/* Other Projects Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {otherProjects.map(renderOtherProject)}
+                </div>
+            </div>
         </section>
     );
 };

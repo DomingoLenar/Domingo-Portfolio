@@ -102,7 +102,7 @@ export const ContactSection = () => {
                                     value={formData.name}
                                     onChange={handleChange}
                                     className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                                    placeholder="John Doe"
+                                    placeholder="Your name"
                                     required
                                     disabled={status === "loading"}
                                 />
@@ -115,7 +115,7 @@ export const ContactSection = () => {
                                     value={formData.email}
                                     onChange={handleChange}
                                     className="w-full px-4 py-3 bg-background border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                                    placeholder="john@example.com"
+                                    placeholder="Your email"
                                     required
                                     disabled={status === "loading"}
                                 />

@@ -1,6 +1,6 @@
 # Lenar Domingo — Portfolio
 
-Personal portfolio site for Lenar Domingo, a frontend developer and B.S. Computer Science graduate of Saint Louis University.
+Personal portfolio site for Lenar Domingo, a UI/UX designer, frontend developer and B.S. Computer Science graduate of Saint Louis University.
 
 **Live site:** https://domingolenar.github.io/Domingo-Portfolio/
 

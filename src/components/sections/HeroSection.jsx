@@ -1,7 +1,7 @@
 import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react";
 import { TypeAnimation } from 'react-type-animation';
-import { FaReact, FaNodeJs, FaHtml5 } from "react-icons/fa";
-import { SiTypescript, SiTailwindcss, SiJavascript } from "react-icons/si";
+import { FaReact } from "react-icons/fa";
+import { SiTypescript, SiTailwindcss, SiFigma } from "react-icons/si";
 
 export const HeroSection = () => {
     return (
@@ -25,12 +25,16 @@ export const HeroSection = () => {
                                 </span>
                             </h1>
 
+                            <p className="text-xl md:text-2xl font-semibold text-foreground/90 opacity-0 animate-fade-in-delay-2">
+                                UI/UX Designer & Frontend Developer
+                            </p>
+
                             <div className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 opacity-0 animate-fade-in-delay-3 min-h-[3.5rem] md:min-h-[2rem]">
                                 <TypeAnimation
                                     sequence={[
-                                        'Frontend Developer specializing in React and TypeScript.',
-                                        2500,
                                         'Bridging the gap between design and engineering.',
+                                        2500,
+                                        'Designing in Figma, then building it in React.',
                                         2500,
                                         'Building responsive, user-centric web and mobile apps.',
                                         2500,
@@ -74,41 +78,28 @@ export const HeroSection = () => {
 
                     {/* Right: Profile Picture */}
                     <div className="order-1 lg:order-2 flex justify-center opacity-0 animate-fade-in-delay-2 relative">
-                        {/* Floating Icons */}
-                        <div className="absolute top-0 right-4 md:top-4 md:right-12 z-20 animate-bounce" style={{ animationDuration: '3s' }}>
+                        {/* Floating Icons: design + build */}
+                        <div className="absolute top-0 right-4 md:top-4 md:right-12 z-20 animate-float" style={{ animationDuration: '6s' }}>
+                            <div className="bg-background/80 backdrop-blur-md p-3 rounded-full border border-white/10 shadow-[0_0_20px_rgba(242,78,30,0.3)] text-[#F24E1E]">
+                                <SiFigma size={30} />
+                            </div>
+                        </div>
+
+                        <div className="absolute top-12 -left-4 md:top-16 md:-left-8 z-20 animate-float" style={{ animationDuration: '7s', animationDelay: '1s' }}>
                             <div className="bg-background/80 backdrop-blur-md p-3 rounded-full border border-white/10 shadow-[0_0_20px_rgba(97,218,251,0.3)] text-[#61DAFB]">
                                 <FaReact size={32} />
                             </div>
                         </div>
-                        
-                        <div className="absolute bottom-10 -left-2 md:bottom-16 md:left-4 z-20 animate-bounce" style={{ animationDuration: '4.5s' }}>
+
+                        <div className="absolute bottom-10 -left-2 md:bottom-16 md:left-4 z-20 animate-float" style={{ animationDuration: '6.5s', animationDelay: '2s' }}>
                             <div className="bg-background/80 backdrop-blur-md p-3 rounded-full border border-white/10 shadow-[0_0_20px_rgba(49,120,198,0.3)] text-[#3178C6]">
                                 <SiTypescript size={28} />
                             </div>
                         </div>
 
-                        <div className="absolute -bottom-4 right-10 md:-bottom-2 md:right-20 z-20 animate-bounce" style={{ animationDuration: '3.5s' }}>
-                            <div className="bg-background/80 backdrop-blur-md p-3 rounded-full border border-white/10 shadow-[0_0_20px_rgba(51,153,51,0.3)] text-[#339933]">
-                                <FaNodeJs size={30} />
-                            </div>
-                        </div>
-
-                        {/* New bubbles */}
-                        <div className="absolute top-12 -left-4 md:top-16 md:-left-8 z-20 animate-bounce" style={{ animationDuration: '4s' }}>
+                        <div className="absolute -bottom-4 right-10 md:-bottom-2 md:right-20 z-20 animate-float" style={{ animationDuration: '7.5s', animationDelay: '0.5s' }}>
                             <div className="bg-background/80 backdrop-blur-md p-3 rounded-full border border-white/10 shadow-[0_0_20px_rgba(56,189,248,0.3)] text-[#38bdf8]">
-                                <SiTailwindcss size={26} />
-                            </div>
-                        </div>
-
-                        <div className="absolute top-1/2 -right-6 md:top-1/2 md:-right-10 -translate-y-1/2 z-20 animate-bounce" style={{ animationDuration: '5s' }}>
-                            <div className="bg-background/80 backdrop-blur-md p-3 rounded-full border border-white/10 shadow-[0_0_20px_rgba(227,79,38,0.3)] text-[#E34F26]">
-                                <FaHtml5 size={28} />
-                            </div>
-                        </div>
-
-                        <div className="absolute -top-6 left-1/4 md:-top-10 md:left-1/4 z-20 animate-bounce" style={{ animationDuration: '3.8s' }}>
-                            <div className="bg-background/80 backdrop-blur-md p-3 rounded-full border border-white/10 shadow-[0_0_20px_rgba(247,223,30,0.3)] text-[#F7DF1E]">
-                                <SiJavascript size={28} />
+                                <SiTailwindcss size={28} />
                             </div>
                         </div>
 
