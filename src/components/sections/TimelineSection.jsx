@@ -24,7 +24,7 @@ const timelineData = [
         type: "experience",
         title: "Development Intern",
         organization: "NOAH Business Applications",
-        date: "June 2025 – July 2025",
+        date: "June 2024 – July 2024",
         location: "Remote",
         description: "Accelerated development lifecycle of enterprise business software. Implemented scalable new features, resolved critical logic bugs, and produced comprehensive technical documentation.",
         icon: <Briefcase size={20} />
